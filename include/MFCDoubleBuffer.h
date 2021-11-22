@@ -163,5 +163,14 @@ class CLASS_DECLSPEC  DoubleBufferScrollView : public DoubleBufferViewBase<CScro
         Update();
         Invalidate();
     }
+
+    afx_msg BOOL OnMouseWheel(UINT nFlags, short delta, CPoint point)
+    {
+        auto result = DoubleBufferViewBase<CScrollView>::OnMouseWheel(nFlags, delta, point);
+        Update();
+        Invalidate();
+        return result;
+    }
+
     DECLARE_MESSAGE_MAP()
 };
