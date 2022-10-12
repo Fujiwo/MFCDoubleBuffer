@@ -1,6 +1,7 @@
 #pragma once
 
-namespace ShosMFCDoubleBuffer {
+namespace Shos {
+namespace MFCDoubleBuffer {
 
 #ifdef EXPORTING
 #define CLASS_DECLSPEC __declspec(dllexport)
@@ -181,4 +182,5 @@ protected:
     DECLARE_MESSAGE_MAP()
 };
 
-} // namespace ShosMFCDoubleBuffer
+} // namespace MFCDoubleBuffer
+} // namespace Shos

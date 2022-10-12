@@ -6,7 +6,8 @@
 #define new DEBUG_NEW
 #endif
 
-namespace ShosMFCDoubleBuffer {
+namespace Shos {
+namespace MFCDoubleBuffer {
 
 IMPLEMENT_DYNCREATE(DoubleBufferView, DoubleBufferViewBase<CView>)
 
@@ -27,4 +28,5 @@ BEGIN_MESSAGE_MAP(DoubleBufferScrollView, DoubleBufferViewBase<CScrollView>)
     ON_WM_MOUSEWHEEL()
 END_MESSAGE_MAP()
 
-} // namespace ShosMFCDoubleBuffer
+} // namespace MFCDoubleBuffer
+} // namespace Shos

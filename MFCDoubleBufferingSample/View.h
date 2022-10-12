@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "..\include\MFCDoubleBuffer.h"
 
-using namespace ShosMFCDoubleBuffer;
+using namespace Shos::MFCDoubleBuffer;
 
 class View : public DoubleBufferScrollView
 {
