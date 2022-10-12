@@ -1,5 +1,7 @@
 #pragma once
 
+namespace ShosMFCDoubleBuffer {
+
 #ifdef EXPORTING
 #define CLASS_DECLSPEC __declspec(dllexport)
 #else
@@ -178,3 +180,5 @@ protected:
     DECLARE_DYNCREATE(DoubleBufferScrollView)
     DECLARE_MESSAGE_MAP()
 };
+
+} // namespace ShosMFCDoubleBuffer

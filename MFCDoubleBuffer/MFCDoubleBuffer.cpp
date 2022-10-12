@@ -6,6 +6,8 @@
 #define new DEBUG_NEW
 #endif
 
+namespace ShosMFCDoubleBuffer {
+
 IMPLEMENT_DYNCREATE(DoubleBufferView, DoubleBufferViewBase<CView>)
 
 BEGIN_MESSAGE_MAP(DoubleBufferView, DoubleBufferViewBase<CView>)
@@ -24,3 +26,5 @@ BEGIN_MESSAGE_MAP(DoubleBufferScrollView, DoubleBufferViewBase<CScrollView>)
     ON_WM_VSCROLL()
     ON_WM_MOUSEWHEEL()
 END_MESSAGE_MAP()
+
+} // namespace ShosMFCDoubleBuffer

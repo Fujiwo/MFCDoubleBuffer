@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include "..\include\MFCDoubleBuffer.h"
 
+using namespace ShosMFCDoubleBuffer;
+
 class View : public DoubleBufferScrollView
 {
 	DECLARE_DYNCREATE(View)
