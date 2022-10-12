@@ -116,8 +116,14 @@ protected:
     virtual void OnPaint(CDC& dc)
     { Draw(dc); }
     
-    virtual void OnDraw(CDC* pDC)
+    virtual void OnDraw(CDC* pDC) override
     { ASSERT(false); }
+
+    virtual void OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint) override
+    {
+        Update();
+        TView::OnUpdate(pSender, lHint, pHint);
+    }
 
     afx_msg void OnPaint()
     {
@@ -141,15 +147,12 @@ protected:
 class CLASS_DECLSPEC DoubleBufferView : public DoubleBufferViewBase<CView>
 {
     DECLARE_DYNCREATE(DoubleBufferView)
-
     DECLARE_MESSAGE_MAP()
 };
 
 class CLASS_DECLSPEC  DoubleBufferScrollView : public DoubleBufferViewBase<CScrollView>
 {
-    DECLARE_DYNCREATE(DoubleBufferScrollView)
-
-
+protected:
     afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
     {
         DoubleBufferViewBase<CScrollView>::OnHScroll(nSBCode, nPos, pScrollBar);
@@ -172,5 +175,6 @@ class CLASS_DECLSPEC  DoubleBufferScrollView : public DoubleBufferViewBase<CScro
         return result;
     }
 
+    DECLARE_DYNCREATE(DoubleBufferScrollView)
     DECLARE_MESSAGE_MAP()
 };
