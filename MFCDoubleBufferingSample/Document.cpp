@@ -1,4 +1,7 @@
-﻿#include "pch.h"
+﻿// Document.cpp : サンプルのドキュメントの実行時クラス情報とメッセージ マップの定義
+// 実装は Document.h にある
+
+#include "pch.h"
 #include "framework.h"
 #include "Document.h"
 

@@ -1,4 +1,6 @@
-﻿#include "pch.h"
+﻿// Application.cpp : サンプル アプリケーションの初期化
+
+#include "pch.h"
 #include "framework.h"
 #include "afxwinappex.h"
 #include "Application.h"
@@ -10,6 +12,8 @@
 #define new DEBUG_NEW
 #endif
 
+// 「新規作成」「開く」は CWinApp の標準の処理を使う
+// (「上書き保存」などはドキュメント側の標準の処理が使われる)
 BEGIN_MESSAGE_MAP(Application, CWinApp)
 	ON_COMMAND(ID_FILE_NEW, &CWinApp::OnFileNew)
 	ON_COMMAND(ID_FILE_OPEN, &CWinApp::OnFileOpen)
@@ -24,11 +28,11 @@ BOOL Application::InitInstance()
 
 	EnableTaskbarInteraction(FALSE);
 
-	auto pDocTemplate = new CSingleDocTemplate(IDR_MAINFRAME, RUNTIME_CLASS(Document), RUNTIME_CLASS(CFrameWnd), RUNTIME_CLASS(View));
-	if (pDocTemplate == nullptr)
-		return FALSE;
-	AddDocTemplate(pDocTemplate);
+	// ドキュメント・フレーム・ビューの組み合わせを登録する
+	// フレームは標準の CFrameWnd をそのまま使う
+	AddDocTemplate(new CSingleDocTemplate(IDR_MAINFRAME, RUNTIME_CLASS(Document), RUNTIME_CLASS(CFrameWnd), RUNTIME_CLASS(View)));
 
+	// コマンド ラインの指定 (ファイル名など) に従って、新規作成またはファイルを開く
 	CCommandLineInfo cmdInfo;
 	ParseCommandLine(cmdInfo);
 

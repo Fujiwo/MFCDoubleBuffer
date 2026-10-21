@@ -136,6 +136,11 @@ xcopy "$(OutDir)\MFCDoubleBuffer.lib" "$(SolutionDir)\lib" /Y
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)\MFCDoubleBuffer.h" "$(SolutionDir)\include" /Y
+xcopy "$(OutDir)\MFCDoubleBuffer.lib" "$(SolutionDir)\lib" /Y
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -163,6 +168,11 @@ xcopy "$(OutDir)\MFCDoubleBuffer.lib" "$(SolutionDir)\lib" /Y
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)\MFCDoubleBuffer.h" "$(SolutionDir)\include" /Y
+xcopy "$(OutDir)\MFCDoubleBuffer.lib" "$(SolutionDir)\lib" /Y
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
